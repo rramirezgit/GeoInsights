@@ -1,0 +1,197 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-57.5, -33.5], [-57.5, -38.5], [-60.5, -39.5], [-63.0, -38.8], [-62.0, -36.5], [-60.5, -34.0], [-58.5, -33.5], [-57.5, -33.5]]]
+      },
+      "properties": { "name": "Buenos Aires", "code": "AR-B", "population": 17541141, "area_km2": 307571 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-58.33, -34.53], [-58.33, -34.70], [-58.53, -34.70], [-58.53, -34.53], [-58.33, -34.53]]]
+      },
+      "properties": { "name": "Ciudad Autónoma de Buenos Aires", "code": "AR-C", "population": 3120612, "area_km2": 203 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-62.0, -30.0], [-62.0, -33.5], [-63.5, -35.0], [-66.0, -35.0], [-66.0, -32.0], [-65.5, -30.0], [-63.5, -29.5], [-62.0, -30.0]]]
+      },
+      "properties": { "name": "Córdoba", "code": "AR-X", "population": 3978984, "area_km2": 165321 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-59.0, -28.0], [-59.0, -33.7], [-61.7, -33.7], [-62.0, -30.5], [-61.0, -28.0], [-59.0, -28.0]]]
+      },
+      "properties": { "name": "Santa Fe", "code": "AR-S", "population": 3556522, "area_km2": 133007 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-66.5, -32.0], [-66.5, -36.5], [-69.0, -36.5], [-70.5, -35.0], [-70.0, -32.0], [-69.0, -31.5], [-67.5, -31.8], [-66.5, -32.0]]]
+      },
+      "properties": { "name": "Mendoza", "code": "AR-M", "population": 2014533, "area_km2": 148827 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-64.5, -26.0], [-64.5, -28.0], [-66.5, -28.0], [-66.5, -26.0], [-65.5, -25.8], [-64.5, -26.0]]]
+      },
+      "properties": { "name": "Tucumán", "code": "AR-T", "population": 1703186, "area_km2": 22524 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-57.8, -30.0], [-57.8, -34.0], [-60.5, -34.0], [-60.8, -31.5], [-60.2, -30.0], [-57.8, -30.0]]]
+      },
+      "properties": { "name": "Entre Ríos", "code": "AR-E", "population": 1385961, "area_km2": 78781 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-62.5, -22.0], [-62.5, -26.5], [-66.5, -26.5], [-68.5, -24.0], [-67.0, -22.0], [-63.5, -22.0], [-62.5, -22.0]]]
+      },
+      "properties": { "name": "Salta", "code": "AR-A", "population": 1440672, "area_km2": 155488 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-53.6, -25.5], [-53.6, -28.2], [-55.8, -28.2], [-55.0, -25.5], [-53.6, -25.5]]]
+      },
+      "properties": { "name": "Misiones", "code": "AR-N", "population": 1274992, "area_km2": 29801 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-63.5, -42.0], [-63.5, -46.5], [-72.0, -46.5], [-72.0, -42.0], [-68.0, -42.0], [-63.5, -42.0]]]
+      },
+      "properties": { "name": "Chubut", "code": "AR-U", "population": 618994, "area_km2": 224686 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-68.0, -36.5], [-68.0, -41.0], [-71.5, -41.0], [-71.5, -37.0], [-70.5, -36.5], [-68.0, -36.5]]]
+      },
+      "properties": { "name": "Neuquén", "code": "AR-Q", "population": 726590, "area_km2": 94078 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-63.0, -38.0], [-63.0, -42.0], [-71.5, -42.0], [-71.5, -39.0], [-68.0, -38.0], [-63.0, -38.0]]]
+      },
+      "properties": { "name": "Río Negro", "code": "AR-R", "population": 747610, "area_km2": 203013 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-65.0, -46.5], [-65.0, -52.5], [-72.0, -52.5], [-72.0, -46.5], [-68.0, -46.5], [-65.0, -46.5]]]
+      },
+      "properties": { "name": "Santa Cruz", "code": "AR-Z", "population": 365698, "area_km2": 243943 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-65.0, -52.5], [-65.0, -55.5], [-69.5, -55.5], [-72.0, -54.0], [-72.0, -52.5], [-65.0, -52.5]]]
+      },
+      "properties": { "name": "Tierra del Fuego", "code": "AR-V", "population": 190641, "area_km2": 21571 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-57.5, -27.0], [-57.5, -30.0], [-60.5, -30.0], [-60.5, -27.0], [-59.0, -26.5], [-57.5, -27.0]]]
+      },
+      "properties": { "name": "Corrientes", "code": "AR-W", "population": 1130320, "area_km2": 88199 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-58.5, -24.5], [-58.5, -27.5], [-61.5, -27.5], [-61.5, -24.5], [-59.5, -24.0], [-58.5, -24.5]]]
+      },
+      "properties": { "name": "Chaco", "code": "AR-H", "population": 1204541, "area_km2": 99633 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-57.5, -24.0], [-57.5, -26.5], [-59.5, -27.0], [-61.0, -25.0], [-59.5, -24.0], [-57.5, -24.0]]]
+      },
+      "properties": { "name": "Formosa", "code": "AR-P", "population": 605193, "area_km2": 72066 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-64.5, -25.0], [-64.5, -27.5], [-66.5, -28.0], [-68.0, -26.0], [-67.0, -24.5], [-65.5, -24.5], [-64.5, -25.0]]]
+      },
+      "properties": { "name": "Jujuy", "code": "AR-Y", "population": 770881, "area_km2": 53219 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-62.0, -25.0], [-62.0, -30.0], [-64.5, -30.0], [-64.5, -26.0], [-63.5, -25.0], [-62.0, -25.0]]]
+      },
+      "properties": { "name": "Santiago del Estero", "code": "AR-G", "population": 978313, "area_km2": 136351 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-66.0, -28.5], [-66.0, -31.5], [-69.0, -31.5], [-69.0, -28.5], [-67.5, -28.0], [-66.0, -28.5]]]
+      },
+      "properties": { "name": "Catamarca", "code": "AR-K", "population": 415438, "area_km2": 102602 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-66.0, -28.5], [-66.5, -30.5], [-67.5, -32.5], [-70.0, -31.5], [-69.5, -28.5], [-67.0, -28.0], [-66.0, -28.5]]]
+      },
+      "properties": { "name": "La Rioja", "code": "AR-F", "population": 393531, "area_km2": 89680 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-66.0, -32.0], [-66.0, -36.0], [-67.5, -36.5], [-70.0, -35.5], [-69.5, -32.0], [-67.0, -31.5], [-66.0, -32.0]]]
+      },
+      "properties": { "name": "San Luis", "code": "AR-D", "population": 508328, "area_km2": 76748 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-66.5, -28.5], [-66.5, -32.5], [-70.5, -32.0], [-70.0, -28.5], [-68.0, -28.0], [-66.5, -28.5]]]
+      },
+      "properties": { "name": "San Juan", "code": "AR-J", "population": 818234, "area_km2": 89651 }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-63.0, -35.0], [-63.0, -39.5], [-66.5, -39.0], [-66.5, -35.0], [-65.0, -35.0], [-63.0, -35.0]]]
+      },
+      "properties": { "name": "La Pampa", "code": "AR-L", "population": 358428, "area_km2": 143440 }
+    }
+  ]
+}

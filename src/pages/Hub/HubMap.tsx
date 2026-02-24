@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef } from 'react'
 import Map from 'react-map-gl/mapbox'
 import { MAPBOX_TOKEN, MAP_STYLES } from '@/constants/mapbox'
 import 'mapbox-gl/dist/mapbox-gl.css'
@@ -14,13 +14,7 @@ const HUB_VIEW = {
 export function HubMap() {
   const bearingRef = useRef(0)
   const rafRef = useRef<number>(0)
-  const mapRef = useRef<any>(null)
-
-  const animate = useCallback(() => {
-    bearingRef.current = (bearingRef.current + 0.1) % 360
-    mapRef.current?.setBearing(bearingRef.current)
-    rafRef.current = requestAnimationFrame(animate)
-  }, [])
+  const mapInstanceRef = useRef<mapboxgl.Map | null>(null)
 
   useEffect(() => {
     return () => {
@@ -28,13 +22,16 @@ export function HubMap() {
     }
   }, [])
 
-  const handleLoad = useCallback(
-    (e: any) => {
-      mapRef.current = e.target
-      rafRef.current = requestAnimationFrame(animate)
-    },
-    [animate],
-  )
+  function handleLoad(e: { target: mapboxgl.Map }) {
+    mapInstanceRef.current = e.target
+
+    const tick = () => {
+      bearingRef.current = (bearingRef.current + 0.1) % 360
+      mapInstanceRef.current?.setBearing(bearingRef.current)
+      rafRef.current = requestAnimationFrame(tick)
+    }
+    rafRef.current = requestAnimationFrame(tick)
+  }
 
   return (
     <div className="fixed inset-0 z-0">

@@ -6,6 +6,10 @@ export type {
   ProvinceFeature,
   ProvinceCollection,
   AnalysisResult,
+  SatelitalMode,
+  ElevationPoint,
+  ElevationProfile,
+  MeasurementResult,
 } from './geo.types'
 
 export type {

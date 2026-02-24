@@ -36,6 +36,11 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400;
   }
+
+  /* Card hover glow - activated by parent :hover */
+  *:hover > .hover-glow {
+    opacity: 1 !important;
+  }
 }
 
 @layer utilities {

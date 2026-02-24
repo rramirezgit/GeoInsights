@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'
 import type { CropType } from '@/types/agro.types'
 import type { TruckStatus } from '@/types/fleet.types'
-import type { MapStyle, AnalysisResult } from '@/types/geo.types'
+import type { MapStyle, AnalysisResult, SatelitalMode, ElevationPoint, ElevationProfile, MeasurementResult } from '@/types/geo.types'
 
 interface HeatmapFilters {
   province: string
@@ -25,6 +25,10 @@ interface SatelitalState {
   leftStyle: MapStyle
   rightStyle: MapStyle
   sliderPosition: number
+  mode: SatelitalMode
+  elevationPoints: ElevationPoint[]
+  elevationProfile: ElevationProfile | null
+  measureResult: MeasurementResult | null
 }
 
 interface DemoStore {
@@ -37,6 +41,12 @@ interface DemoStore {
   setTrackingFilter: <K extends keyof TrackingFilters>(key: K, value: TrackingFilters[K]) => void
   setAnalysisResult: (result: AnalysisResult | null) => void
   setSatelitalState: <K extends keyof SatelitalState>(key: K, value: SatelitalState[K]) => void
+  setSatelitalMode: (mode: SatelitalMode) => void
+  addElevationPoint: (point: ElevationPoint) => void
+  setElevationProfile: (profile: ElevationProfile | null) => void
+  clearElevation: () => void
+  setMeasureResult: (result: MeasurementResult | null) => void
+  clearMeasure: () => void
 
   resetHeatmap: () => void
   resetTracking: () => void
@@ -65,6 +75,10 @@ const initialSatelital: SatelitalState = {
   leftStyle: 'satellite',
   rightStyle: 'terrain',
   sliderPosition: 50,
+  mode: 'compare',
+  elevationPoints: [],
+  elevationProfile: null,
+  measureResult: null,
 }
 
 export const useDemoStore = create<DemoStore>()(
@@ -83,6 +97,33 @@ export const useDemoStore = create<DemoStore>()(
         set({ draw: { analysisResult: result } }),
       setSatelitalState: (key, value) =>
         set((state) => ({ satelital: { ...state.satelital, [key]: value } })),
+      setSatelitalMode: (mode) =>
+        set((state) => ({
+          satelital: {
+            ...state.satelital,
+            mode,
+            elevationPoints: [],
+            elevationProfile: null,
+            measureResult: null,
+          },
+        })),
+      addElevationPoint: (point) =>
+        set((state) => ({
+          satelital: {
+            ...state.satelital,
+            elevationPoints: [...state.satelital.elevationPoints, point].slice(0, 2),
+          },
+        })),
+      setElevationProfile: (profile) =>
+        set((state) => ({ satelital: { ...state.satelital, elevationProfile: profile } })),
+      clearElevation: () =>
+        set((state) => ({
+          satelital: { ...state.satelital, elevationPoints: [], elevationProfile: null },
+        })),
+      setMeasureResult: (result) =>
+        set((state) => ({ satelital: { ...state.satelital, measureResult: result } })),
+      clearMeasure: () =>
+        set((state) => ({ satelital: { ...state.satelital, measureResult: null } })),
 
       resetHeatmap: () => set({ heatmap: initialHeatmap }),
       resetTracking: () => set({ tracking: initialTracking }),

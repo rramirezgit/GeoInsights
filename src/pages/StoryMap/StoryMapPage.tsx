@@ -9,7 +9,7 @@ export default function StoryMapPage() {
   const { activeChapter, chapterRefs } = useScrollChapter()
 
   return (
-    <div className="relative bg-slate-950">
+    <div className="relative bg-slate-950 overflow-x-hidden">
       {/* Fixed map background */}
       <div className="fixed inset-0 z-0">
         <StoryMap activeChapterId={activeChapter} />
@@ -42,8 +42,8 @@ export default function StoryMapPage() {
                 className="ml-auto w-full md:w-[40%] md:max-w-md min-h-[60vh] flex items-center pointer-events-auto"
               >
                 <motion.div
-                  initial={{ opacity: 0, x: 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.6, ease: 'easeOut' }}
                   className={[

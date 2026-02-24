@@ -25,11 +25,11 @@ export const ARGENTINA_BOUNDS = {
 }
 
 export const ZONE_PRESETS = {
-  buenosAires: { longitude: -58.38, latitude: -34.6, zoom: 11 },
-  rosario: { longitude: -60.65, latitude: -32.95, zoom: 12 },
-  cordoba: { longitude: -64.18, latitude: -31.42, zoom: 12 },
-  mendoza: { longitude: -68.84, latitude: -32.89, zoom: 11 },
-  deltaParana: { longitude: -58.9, latitude: -33.9, zoom: 10 },
-  peritoMoreno: { longitude: -73.05, latitude: -50.5, zoom: 12 },
-  iguazu: { longitude: -54.44, latitude: -25.69, zoom: 13 },
+  buenosAires: { longitude: -58.38, latitude: -34.6, zoom: 11, pitch: 0 },
+  rosario: { longitude: -60.65, latitude: -32.95, zoom: 12, pitch: 0 },
+  cordoba: { longitude: -64.18, latitude: -31.42, zoom: 12, pitch: 0 },
+  mendoza: { longitude: -68.84, latitude: -32.89, zoom: 11, pitch: 0 },
+  deltaParana: { longitude: -58.9, latitude: -33.9, zoom: 10, pitch: 0 },
+  peritoMoreno: { longitude: -73.05, latitude: -50.5, zoom: 12, pitch: 60 },
+  iguazu: { longitude: -54.44, latitude: -25.69, zoom: 13, pitch: 0 },
 } as const

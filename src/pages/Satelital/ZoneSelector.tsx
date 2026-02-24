@@ -45,7 +45,7 @@ export function ZoneSelector() {
   const handleZoneClick = (zone: ZoneConfig) => {
     const preset = ZONE_PRESETS[zone.key]
     setActiveZone(zone.key)
-    flyTo([preset.longitude, preset.latitude], preset.zoom)
+    flyTo([preset.longitude, preset.latitude], preset.zoom, preset.pitch)
   }
 
   return (
@@ -53,7 +53,7 @@ export function ZoneSelector() {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.7, duration: 0.5, ease: 'easeOut' }}
-      className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[5] flex items-center gap-2 px-3 py-2 rounded-2xl bg-slate-900/70 backdrop-blur-xl border border-white/10"
+      className="absolute bottom-6 left-0 right-0 mx-auto z-[5] w-fit max-w-[calc(100%-2rem)] flex items-center gap-2 px-3 py-2 rounded-2xl bg-slate-900/70 backdrop-blur-xl border border-white/10 overflow-x-auto scrollbar-thin"
     >
       {ZONES.map((zone) => {
         const isActive = activeZone === zone.key

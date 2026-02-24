@@ -21,6 +21,27 @@ export function isPointInPolygon(point: [number, number], polygon: Feature<Polyg
   return turf.booleanPointInPolygon(pt, polygon)
 }
 
+export function calculateSegmentDistances(points: [number, number][]): number[] {
+  const distances: number[] = []
+  for (let i = 1; i < points.length; i++) {
+    const from = turf.point(points[i - 1])
+    const to = turf.point(points[i])
+    distances.push(turf.distance(from, to, { units: 'kilometers' }))
+  }
+  return distances
+}
+
+export function calculateTotalDistance(points: [number, number][]): number {
+  return calculateSegmentDistances(points).reduce((sum, d) => sum + d, 0)
+}
+
+export function calculateMeasurementArea(points: [number, number][]): number | null {
+  if (points.length < 3) return null
+  const closed = [...points, points[0]]
+  const polygon = turf.polygon([closed])
+  return turf.area(polygon) / 1_000_000 // km²
+}
+
 export function getAptitude(centroid: { lat: number; lng: number }): {
   aptitude: 'alta' | 'media' | 'baja'
   soilType: string

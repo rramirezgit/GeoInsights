@@ -11,6 +11,14 @@ export function sampleElevationProfile(
   const line = turf.lineString([startLngLat, endLngLat])
   const totalDistance = turf.length(line, { units: 'kilometers' })
 
+  const queryElevation = (lng: number, lat: number): number => {
+    try {
+      return map.queryTerrainElevation({ lng, lat }) ?? 0
+    } catch {
+      return 0
+    }
+  }
+
   const samples: { distance: number; elevation: number }[] = []
 
   for (let i = 0; i <= NUM_SAMPLES; i++) {
@@ -18,14 +26,10 @@ export function sampleElevationProfile(
     const point = turf.along(line, dist, { units: 'kilometers' })
     const [lng, lat] = point.geometry.coordinates
 
-    let elev = 0
-    try {
-      elev = map.queryTerrainElevation({ lng, lat }) ?? 0
-    } catch {
-      elev = 0
-    }
-
-    samples.push({ distance: Math.round(dist * 1000) / 1000, elevation: Math.round(elev) })
+    samples.push({
+      distance: Math.round(dist * 1000) / 1000,
+      elevation: Math.round(queryElevation(lng, lat)),
+    })
   }
 
   const elevations = samples.map((s) => s.elevation)
@@ -33,15 +37,14 @@ export function sampleElevationProfile(
   const maxElevation = Math.max(...elevations)
   const avgElevation = Math.round(elevations.reduce((a, b) => a + b, 0) / elevations.length)
 
-  // Compute elevation gain (sum of all positive ascents)
   let elevationGain = 0
   for (let i = 1; i < elevations.length; i++) {
     const diff = elevations[i] - elevations[i - 1]
     if (diff > 0) elevationGain += diff
   }
 
-  const startElev = map.queryTerrainElevation({ lng: startLngLat[0], lat: startLngLat[1] }) ?? 0
-  const endElev = map.queryTerrainElevation({ lng: endLngLat[0], lat: endLngLat[1] }) ?? 0
+  const startElev = queryElevation(startLngLat[0], startLngLat[1])
+  const endElev = queryElevation(endLngLat[0], endLngLat[1])
 
   return {
     points: [

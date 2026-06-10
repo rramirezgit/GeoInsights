@@ -1,35 +1,37 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/React-18.3-61DAFB?style=flat-square&logo=react&logoColor=white" />
-  <img src="https://img.shields.io/badge/TypeScript-5.8-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript&logoColor=white" />
   <img src="https://img.shields.io/badge/Vite-7.3-646CFF?style=flat-square&logo=vite&logoColor=white" />
   <img src="https://img.shields.io/badge/Mapbox_GL-3.x-000?style=flat-square&logo=mapbox&logoColor=white" />
   <img src="https://img.shields.io/badge/deck.gl-9.x-FC4C02?style=flat-square" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-3.x-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" />
+  <img src="https://github.com/rramirezgit/GeoInsights/actions/workflows/ci.yml/badge.svg" />
 </p>
 
 <h1 align="center">GeoInsights</h1>
 
 <p align="center">
-  <strong>Plataforma de visualizacion geoespacial inteligente</strong><br/>
-  <em>6 demos interactivos que combinan mapas, datos en tiempo real y analisis geoespacial sobre Argentina</em>
+  <strong>Intelligent geospatial visualization platform</strong><br/>
+  <em>6 interactive demos combining maps, real-time data and client-side spatial analysis over Argentina</em>
 </p>
 
 <p align="center">
   <a href="#demos">Demos</a> &middot;
   <a href="#tech-stack">Tech Stack</a> &middot;
-  <a href="#instalacion">Instalacion</a> &middot;
-  <a href="#arquitectura">Arquitectura</a> &middot;
-  <a href="#estructura">Estructura</a>
+  <a href="#getting-started">Getting Started</a> &middot;
+  <a href="#architecture">Architecture</a> &middot;
+  <a href="#testing">Testing</a> &middot;
+  <a href="#project-structure">Structure</a>
 </p>
 
 ---
 
-## Sobre el Proyecto
+## About
 
-GeoInsights es una **Single Page Application** enfocada en visualizacion geoespacial. Construida como proyecto de portafolio, demuestra capacidades avanzadas de desarrollo frontend con mapas interactivos, visualizacion de datos en tiempo real y analisis espacial client-side.
+GeoInsights is a **single page application** focused on geospatial visualization. Built as a portfolio project, it demonstrates advanced frontend engineering with interactive maps, real-time data visualization and client-side spatial analysis.
 
 ```
-Landing con mapa 3D rotando
+Landing with rotating 3D map
        |
        v
   +----+----+----+----+----+
@@ -44,100 +46,98 @@ map   ing   ital  &    Map
 
 ## Demos
 
-### 1. Heatmap Agricola
-Visualizacion de produccion agricola por zona usando **deck.gl ScatterplotLayer** con gradiente de color. Filtros por provincia, cultivo (soja, maiz, trigo, girasol) y anio. Bordes provinciales reales desde los vector tiles de Mapbox. Panel de estadisticas con graficos de Recharts.
+### 1. Agricultural Heatmap
+Crop production by region using a **deck.gl ScatterplotLayer** with color gradients. Filter by province, crop (soy, corn, wheat, sunflower) and year. Real province borders from Mapbox vector tiles. Stats panel powered by Recharts.
 
-### 2. Tracking de Flota
-Simulacion en tiempo real de **20 camiones** moviendose sobre rutas nacionales argentinas (Ruta 9, 7, 40, 3, 14, 11). Marcadores animados con pulso por estado, feed de eventos en vivo, controles de velocidad de simulacion y visualizacion de rutas.
+### 2. Fleet Tracking
+Real-time simulation of **20 trucks** moving along Argentine national routes (Routes 9, 7, 40, 3, 14, 11). Animated status-pulse markers, live event feed, simulation speed controls and route rendering.
 
-### 3. Comparador Satelital
-Dos mapas sincronizados con **slider de comparacion**: vista satelital vs terrain. Arrastra el slider para comparar. Zonas predefinidas: Delta del Parana, Glaciar Perito Moreno, Buenos Aires, Cataratas del Iguazu, Mendoza.
+### 3. Satellite Comparator
+Two synchronized maps with a **comparison slider**: satellite vs terrain. Drag to compare. Preset zones: Paraná Delta, Perito Moreno Glacier, Buenos Aires, Iguazú Falls, Mendoza. Includes elevation profiling and distance measurement modes.
 
 ### 4. Draw & Analyze
-Dibuja poligonos directamente en el mapa haciendo click. Al completar la figura, **Turf.js** calcula automaticamente: area (km2 y hectareas), perimetro, centroide, aptitud agricola estimada y tipo de suelo segun la zona geografica.
+Draw polygons directly on the map by clicking. On completion, **Turf.js** automatically computes: area (km² and hectares), perimeter, centroid, estimated agricultural aptitude and soil type by geographic zone.
 
 ### 5. StoryMap Argentina
-Narrativa scroll-driven con **vuelos cinematograficos** por 6 ubicaciones de Argentina: Buenos Aires, Pampa Humeda, Mendoza, Patagonia y el Noroeste. El mapa vuela suavemente entre ubicaciones a medida que scrolleas por la historia.
+Scroll-driven narrative with **cinematic fly-overs** across 6 Argentine locations: Buenos Aires, the Humid Pampas, Mendoza, Patagonia and the Northwest. The map glides between locations as you scroll through the story.
 
 ### 6. Hub (Landing)
-Pagina principal con mapa 3D rotando de fondo, titulo con gradiente emerald-cyan, grid de cards con glassmorphism y animaciones staggered con Framer Motion.
+Main page with a rotating 3D map background, emerald-cyan gradient typography, glassmorphism card grid and staggered Framer Motion animations.
 
 ---
 
 ## Tech Stack
 
-| Capa | Tecnologia | Funcion |
+| Layer | Technology | Role |
 |------|-----------|---------|
-| **Framework** | React 18 + Vite | SPA con HMR rapido y tree-shaking |
-| **Lenguaje** | TypeScript | Tipado estricto para GeoJSON y APIs geo |
-| **Mapas** | Mapbox GL JS + react-map-gl | Motor de renderizado de mapas |
-| **Capas de datos** | deck.gl | ScatterplotLayer, GeoJsonLayer |
-| **Analisis geo** | Turf.js | Area, perimetro, centroide client-side |
-| **Estado** | Zustand | Estado global con devtools |
-| **Data fetching** | TanStack Query v5 | Cache y fetching con staleTime |
-| **Validacion** | Zod | Schemas para GeoJSON y datos |
-| **Estilos** | Tailwind CSS | Dark theme con glassmorphism |
-| **Animaciones** | Framer Motion | Transiciones y animaciones de UI |
-| **Graficos** | Recharts | BarChart, PieChart en paneles |
-| **Iconos** | Lucide React | Iconografia consistente |
-| **UI primitivos** | Radix UI | Slider, Switch accesibles |
-| **Routing** | React Router v6 | Lazy loading por demo |
+| **Framework** | React 19 + Vite | SPA with fast HMR and tree-shaking |
+| **Language** | TypeScript (strict) | Strong typing for GeoJSON and geo APIs |
+| **Maps** | Mapbox GL JS + react-map-gl | Map rendering engine |
+| **Data layers** | deck.gl | ScatterplotLayer, GeoJsonLayer |
+| **Spatial analysis** | Turf.js | Client-side area, perimeter, centroid |
+| **State** | Zustand | Global state with devtools |
+| **Data fetching** | TanStack Query v5 | Caching and fetching with staleTime |
+| **Validation** | Zod | Schemas for GeoJSON and domain data |
+| **Styling** | Tailwind CSS | Dark theme with glassmorphism |
+| **Animations** | Framer Motion | UI transitions and motion |
+| **Charts** | Recharts | BarChart, PieChart in side panels |
+| **Icons** | Lucide React | Consistent iconography |
+| **UI primitives** | Radix UI | Accessible Slider, Switch, Dialog |
+| **Routing** | React Router | Per-demo lazy loading |
+| **Testing** | Vitest + Testing Library | Unit tests for stores and geo logic |
 
 ---
 
-## Instalacion
+## Getting Started
 
-### Prerequisitos
+### Prerequisites
 
 - **Node.js** >= 18
 - **npm** >= 9
-- Una cuenta en [Mapbox](https://account.mapbox.com/) (plan gratuito)
+- A [Mapbox](https://account.mapbox.com/) account (free tier)
 
 ### Setup
 
 ```bash
-# 1. Clonar el repositorio
-git clone https://github.com/tu-usuario/GeoInsights.git
+git clone https://github.com/rramirezgit/GeoInsights.git
 cd GeoInsights
 
-# 2. Instalar dependencias
 npm install
 
-# 3. Configurar variables de entorno
 cp .env.example .env.local
 ```
 
-Edita `.env.local` y agrega tu token de Mapbox:
+Edit `.env.local` and add your Mapbox token:
 
 ```env
-VITE_MAPBOX_TOKEN=pk.eyJ1...tu_token_aqui
+VITE_MAPBOX_TOKEN=pk.eyJ1...your_token_here
 ```
 
 ```bash
-# 4. Iniciar el servidor de desarrollo
 npm run dev
 ```
 
-Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-### Otros comandos
+### Other commands
 
 ```bash
-npm run build      # Build de produccion
-npm run preview    # Preview del build
-npm run lint       # Ejecutar ESLint
+npm run build      # Type-check + production build
+npm run preview    # Preview the production build
+npm run lint       # Run ESLint
+npm test           # Run the Vitest suite
 ```
 
 ---
 
-## Arquitectura
+## Architecture
 
 ```
 +----------------------------------------------------------+
 |                     BROWSER (SPA)                        |
 |                                                          |
 |   React App  <-->  Mapbox GL  <-->  deck.gl              |
-|   (Vite)           (Mapas)         (Capas)               |
+|   (Vite)           (Maps)          (Data layers)         |
 |                                                          |
 |   +--------------------------------------------------+   |
 |   |              State Layer                         |   |
@@ -147,89 +147,115 @@ npm run lint       # Ejecutar ESLint
                               | HTTP
                               v
 +----------------------------------------------------------+
-|                   DATOS EXTERNOS                         |
+|                   EXTERNAL DATA                          |
 |                                                          |
-|   Mapbox Tiles    Datos GeoJSON     Simulacion local     |
+|   Mapbox Tiles    GeoJSON data      Local simulation     |
 |   (vector tiles)  (public/data/)    (useFleetSimulation) |
 +----------------------------------------------------------+
 ```
 
-### Patrones aplicados
+### Architecture decisions
 
-- **Feature-Based Structure**: cada demo es autocontenido con su pagina, mapa, controles y logica
-- **Separation of Concerns**: BaseMap (config) / DemoMap (capas) / Controls (UI) / Store (estado)
-- **Service Layer**: servicios tipados para carga de datos estaticos y APIs
-- **Lazy Loading**: cada demo se carga bajo demanda con `React.lazy()`
+- **Zustand + TanStack Query instead of a single store**: global UI/map state lives in three small Zustand stores (`mapStore`, `demoStore`, `uiStore`) while server-ish data (static GeoJSON fetched over HTTP) is owned by TanStack Query with a 5-minute `staleTime`. Each tool does what it is best at.
+- **deck.gl on top of Mapbox instead of native Mapbox layers**: deck.gl gives typed, declarative, WebGL-accelerated layers that scale to hundreds of thousands of points and compose cleanly with React.
+- **Client-side spatial analysis with Turf.js**: area, perimeter, centroid and point-in-polygon run in the browser with zero backend. The service layer is designed so a future PostGIS backend (`ST_Area`, `ST_Within`) can replace Turf without touching the UI.
+- **Feature-based structure**: each demo is self-contained (page, map, controls, store slice), so demos can be added or removed without cross-cutting changes.
+- **Per-demo lazy loading**: Mapbox GL and deck.gl are heavy (~1.6 MB); every demo route is split with `React.lazy()` so the initial load stays lean.
+
+### Applied patterns
+
+- **Separation of concerns**: BaseMap (config) / DemoMap (layers) / Controls (UI) / Store (state)
+- **Typed service layer** for static data and APIs, validated with Zod
+- **Query keys + staleTime** for predictable cache behavior
 
 ---
 
-## Estructura
+## Testing
+
+```bash
+npm test
+```
+
+70 Vitest tests cover the pure core of the app:
+
+- **Zustand stores** — viewport math, filter slices, satellite mode transitions
+- **Turf helpers** — area/perimeter/centroid math against known geometries
+- **Fleet simulation** — route interpolation, bearing math, event generation
+- **Zod validators** — GeoJSON and domain schema edge cases
+- **Elevation profiling** — sampling, gain accumulation, defensive terrain queries
+
+Mapbox GL and deck.gl are mocked at the module boundary; the WebGL canvas itself is exercised by Playwright smoke tests in CI.
+
+---
+
+## Project Structure
 
 ```
 src/
   app/                    # App shell, providers, routes
   pages/
-    Hub/                  # Landing page con mapa 3D
-    Heatmap/              # Demo: heatmap agricola
-    Tracking/             # Demo: tracking de flota
-    Satelital/            # Demo: comparador satelital
-    Draw/                 # Demo: dibujo y analisis
-    StoryMap/             # Demo: narrativa scroll-driven
+    Hub/                  # Landing page with 3D map
+    Heatmap/              # Demo: agricultural heatmap
+    Tracking/             # Demo: fleet tracking
+    Satelital/            # Demo: satellite comparator
+    Draw/                 # Demo: draw & analyze
+    StoryMap/             # Demo: scroll-driven narrative
   components/
     layout/               # Navbar, DemoLayout, panels
     map/                  # BaseMap, MapControls, Legend, Popup
     ui/                   # GlassCard, StatWidget, Toggle, etc.
   hooks/                  # useFleetSimulation, useGeoData, etc.
   stores/                 # Zustand: mapStore, demoStore, uiStore
-  services/               # Carga de datos y APIs
+  services/               # Typed data loading
   lib/
-    geo/                  # Turf.js helpers, simulacion, validators
-    mapbox/               # Estilos, factory de capas deck.gl
+    geo/                  # Turf.js helpers, simulation, validators
+    mapbox/               # Styles, deck.gl layer factories
   types/                  # TypeScript: geo, fleet, agro, map
   constants/              # Mapbox config, demos, theme
+  tests/                  # Vitest setup
 
 public/
-  data/                   # GeoJSON de provincias, rutas, flota, agro
+  data/                   # Province GeoJSON, routes, fleet, agro data
 ```
 
 ---
 
-## Datos
+## Data
 
-| Archivo | Contenido |
+| File | Contents |
 |---------|-----------|
-| `argentina-provinces.geojson` | Limites de 24 provincias (simplificado) |
-| `agro-production.json` | ~170 puntos de produccion agricola (2018-2024) |
-| `sample-fleet.json` | 20 camiones con origen, destino, carga y estado |
-| `argentina-routes.json` | 6 rutas nacionales con waypoints |
+| `argentina-provinces.geojson` | Boundaries of 24 provinces (simplified) |
+| `agro-production.json` | ~170 crop production points (2018-2024) |
+| `sample-fleet.json` | 20 trucks with origin, destination, cargo and status |
+| `argentina-routes.json` | 6 national routes with waypoints |
 
-Los bordes provinciales en el Heatmap usan los **vector tiles nativos de Mapbox** para precision total.
+Province borders in the Heatmap use **native Mapbox vector tiles** for full precision.
 
 ---
 
-## Escalabilidad
+## Scalability
 
-El proyecto esta disenado para escalar de portafolio a producto SaaS:
+The project is designed to scale from portfolio to SaaS product:
 
 ```
-FASE 1 (actual)          FASE 2 (SaaS)
-Static + APIs publicas   + Backend (Node.js + Express)
+PHASE 1 (current)        PHASE 2 (SaaS)
+Static + public APIs     + Backend (Node.js + NestJS)
                          + Auth (Clerk / Auth0)
                          + DB (PostgreSQL + PostGIS)
                          + Cache (Redis)
                          + Storage (S3)
 ```
 
-**PostGIS** reemplazaria Turf.js con queries geoespaciales nativas (`ST_Within`, `ST_Intersects`, `ST_Area`).
+**PostGIS** would replace Turf.js with native geospatial queries (`ST_Within`, `ST_Intersects`, `ST_Area`).
 
 ---
 
-## Licencia
+## License
 
-Este proyecto es de uso personal como portafolio. Contactame para consultas sobre uso comercial.
+Personal portfolio project. Contact me for commercial use inquiries.
 
 ---
 
 <p align="center">
-  <sub>Construido con React + Mapbox GL + deck.gl + TypeScript</sub>
+  <sub>Built with React + Mapbox GL + deck.gl + TypeScript</sub>
 </p>

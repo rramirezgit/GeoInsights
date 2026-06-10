@@ -13,12 +13,12 @@ interface ZoneConfig {
 const ZONES: ZoneConfig[] = [
   {
     key: 'deltaParana',
-    label: 'Delta del Parana',
+    label: 'Paraná Delta',
     icon: <Waves className="w-3.5 h-3.5" />,
   },
   {
     key: 'peritoMoreno',
-    label: 'Glaciar Perito Moreno',
+    label: 'Perito Moreno Glacier',
     icon: <Mountain className="w-3.5 h-3.5" />,
   },
   {
@@ -28,12 +28,12 @@ const ZONES: ZoneConfig[] = [
   },
   {
     key: 'iguazu',
-    label: 'Cataratas del Iguazu',
+    label: 'Iguazú Falls',
     icon: <MapPin className="w-3.5 h-3.5" />,
   },
   {
     key: 'mendoza',
-    label: 'Mendoza Vinedos',
+    label: 'Mendoza Vineyards',
     icon: <Grape className="w-3.5 h-3.5" />,
   },
 ]

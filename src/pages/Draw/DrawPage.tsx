@@ -22,9 +22,9 @@ export default function DrawPage() {
   return (
     <DemoLayout
       title="Draw & Analyze"
-      description="Dibuja poligonos en el mapa y obtene analisis geoespacial con Turf.js"
+      description="Draw polygons on the map and get geospatial analysis with Turf.js"
       rightPanel={<AnalysisPanel analysis={analysis} onClear={handleClear} />}
-      rightPanelTitle="Analisis"
+      rightPanelTitle="Analysis"
     >
       <DrawMap onPolygonComplete={handlePolygonComplete} onClear={handleClear} />
     </DemoLayout>

@@ -6,12 +6,12 @@ import { HeatmapStats } from './HeatmapStats'
 export default function HeatmapPage() {
   return (
     <DemoLayout
-      title="Heatmap Agricola"
-      description="Visualizacion de produccion agricola argentina con mapas de calor"
+      title="Agricultural Heatmap"
+      description="Argentine agricultural production visualization with heatmaps"
       leftPanel={<HeatmapControls />}
-      leftPanelTitle="Filtros"
+      leftPanelTitle="Filters"
       rightPanel={<HeatmapStats />}
-      rightPanelTitle="Estadisticas"
+      rightPanelTitle="Stats"
     >
       <HeatmapMap />
     </DemoLayout>

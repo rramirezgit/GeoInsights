@@ -30,7 +30,7 @@ export function MeasurePanel({ result, onClear }: MeasurePanelProps) {
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-1.5">
           <Ruler className="w-3.5 h-3.5 text-cyan-400" />
-          <h3 className="text-xs font-semibold text-white/80 uppercase tracking-wider">Medicion</h3>
+          <h3 className="text-xs font-semibold text-white/80 uppercase tracking-wider">Measurement</h3>
         </div>
         <button
           onClick={onClear}
@@ -43,12 +43,12 @@ export function MeasurePanel({ result, onClear }: MeasurePanelProps) {
       {/* KPIs */}
       <div className="flex items-center justify-around gap-3">
         <div className="flex flex-col items-center gap-0.5">
-          <span className="text-[10px] text-slate-500 uppercase">Puntos</span>
+          <span className="text-[10px] text-slate-500 uppercase">Points</span>
           <span className="text-xs font-semibold text-white">{result.points.length}</span>
         </div>
 
         <div className="flex flex-col items-center gap-0.5">
-          <span className="text-[10px] text-slate-500 uppercase">Distancia</span>
+          <span className="text-[10px] text-slate-500 uppercase">Distance</span>
           <span className="text-xs font-semibold text-cyan-400">{formatDistance(result.totalDistance)}</span>
         </div>
 
@@ -67,8 +67,8 @@ export function MeasurePanel({ result, onClear }: MeasurePanelProps) {
       <div className="mt-3 pt-3 border-t border-white/5">
         <p className="text-[10px] text-slate-500 leading-relaxed text-center">
           {result.isClosed
-            ? 'Poligono cerrado. Presione Limpiar para reiniciar.'
-            : 'Click para agregar puntos. Doble-click para cerrar poligono.'}
+            ? 'Polygon closed. Press Clear to start over.'
+            : 'Click to add points. Double-click to close the polygon.'}
         </p>
       </div>
     </motion.div>

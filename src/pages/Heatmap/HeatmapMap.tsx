@@ -6,7 +6,7 @@ import { useGeoData } from '@/hooks/useGeoData'
 import { useDemoStore } from '@/stores/demoStore'
 import { useMapStore } from '@/stores/mapStore'
 import { MAPBOX_TOKEN, MAP_STYLES } from '@/constants/mapbox'
-import type { AgroDataPoint } from '@/types/agro.types'
+import type { AgroDataPoint, CropType } from '@/types/agro.types'
 import type { PickingInfo } from '@deck.gl/core'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
@@ -40,6 +40,13 @@ function getHeatColor(t: number): [number, number, number, number] {
     }
   }
   return COLOR_STOPS[COLOR_STOPS.length - 1][1]
+}
+
+const CROP_LABELS: Record<CropType, string> = {
+  soja: 'Soy',
+  maiz: 'Corn',
+  trigo: 'Wheat',
+  girasol: 'Sunflower',
 }
 
 interface PopupInfo {
@@ -142,7 +149,7 @@ export function HeatmapMap() {
             longitude: info.coordinate[0],
             latitude: info.coordinate[1],
             province: provinceName,
-            crop: crop === 'all' ? 'Todos' : crop,
+            crop: crop === 'all' ? 'All' : CROP_LABELS[crop],
             production: totalProduction,
           })
           return
@@ -155,7 +162,7 @@ export function HeatmapMap() {
             longitude: point.lng,
             latitude: point.lat,
             province: point.province,
-            crop: point.crop,
+            crop: CROP_LABELS[point.crop],
             production: point.production_tons,
           })
           return
@@ -240,10 +247,10 @@ export function HeatmapMap() {
                   {popupInfo.province}
                 </p>
                 <p className="text-xs text-slate-400 mt-1">
-                  Cultivo: {popupInfo.crop}
+                  Crop: {popupInfo.crop}
                 </p>
                 <p className="text-xs text-slate-400">
-                  Produccion:{' '}
+                  Production:{' '}
                   <span className="text-white font-medium">
                     {popupInfo.production.toLocaleString()} tn
                   </span>
@@ -258,10 +265,10 @@ export function HeatmapMap() {
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="bg-slate-900/80 backdrop-blur-md border border-white/10 rounded-xl px-6 py-4 text-center">
             <p className="text-slate-300 text-sm">
-              No hay datos para los filtros seleccionados
+              No data for the selected filters
             </p>
             <p className="text-slate-500 text-xs mt-1">
-              Ajusta provincia, cultivo o ano
+              Adjust province, crop or year
             </p>
           </div>
         </div>

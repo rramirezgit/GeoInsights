@@ -140,7 +140,7 @@ describe('getAptitude', () => {
   it('classifies the Pampa Húmeda as high aptitude', () => {
     expect(getAptitude({ lat: -34, lng: -60 })).toEqual({
       aptitude: 'alta',
-      soilType: 'Molisol - Pampa Húmeda',
+      soilType: 'Mollisol - Humid Pampas',
     })
   })
 
@@ -155,7 +155,7 @@ describe('getAptitude', () => {
   it('falls back to medium aptitude for northern regions', () => {
     expect(getAptitude({ lat: -25, lng: -65 })).toEqual({
       aptitude: 'media',
-      soilType: 'Entisol - Región Norte',
+      soilType: 'Entisol - Northern Region',
     })
   })
 })

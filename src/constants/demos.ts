@@ -3,8 +3,8 @@ import type { DemoConfig } from '@/types/map.types'
 export const DEMOS: DemoConfig[] = [
   {
     id: 'heatmap',
-    title: 'Heatmap Agrícola',
-    description: 'Visualización de producción agrícola por zona con deck.gl HeatmapLayer',
+    title: 'Agricultural Heatmap',
+    description: 'Agricultural production visualization by zone with deck.gl HeatmapLayer',
     icon: 'Flame',
     path: '/heatmap',
     color: '#f97316',
@@ -12,8 +12,8 @@ export const DEMOS: DemoConfig[] = [
   },
   {
     id: 'tracking',
-    title: 'Tracking de Flota',
-    description: 'Seguimiento en tiempo real de 20 camiones sobre rutas argentinas',
+    title: 'Fleet Tracking',
+    description: 'Real-time tracking of 20 trucks on Argentine routes',
     icon: 'Truck',
     path: '/tracking',
     color: '#22c55e',
@@ -21,8 +21,8 @@ export const DEMOS: DemoConfig[] = [
   },
   {
     id: 'satelital',
-    title: 'Comparador Satelital',
-    description: 'Compará vistas satelitales vs terrain con slider sincronizado',
+    title: 'Satellite Comparator',
+    description: 'Compare satellite vs terrain views with a synced slider',
     icon: 'Satellite',
     path: '/satelital',
     color: '#3b82f6',
@@ -31,7 +31,7 @@ export const DEMOS: DemoConfig[] = [
   {
     id: 'draw',
     title: 'Draw & Analyze',
-    description: 'Dibujá polígonos y analizá área, perímetro y aptitud con Turf.js',
+    description: 'Draw polygons and analyze area, perimeter and aptitude with Turf.js',
     icon: 'PenTool',
     path: '/draw',
     color: '#a855f7',
@@ -40,7 +40,7 @@ export const DEMOS: DemoConfig[] = [
   {
     id: 'storymap',
     title: 'StoryMap Argentina',
-    description: 'Narrativa scroll-driven con vuelos cinematográficos por Argentina',
+    description: 'Scroll-driven narrative with cinematic flights across Argentina',
     icon: 'BookOpen',
     path: '/storymap',
     color: '#06b6d4',

@@ -22,22 +22,22 @@ const aptitudeBadge: Record<
   { label: string; color: string; description: string }
 > = {
   alta: {
-    label: 'Alta',
+    label: 'High',
     color: '#10b981',
     description:
-      'Zona con excelentes condiciones para agricultura intensiva. Suelos fertiles con alta retencion de humedad.',
+      'Zone with excellent conditions for intensive agriculture. Fertile soils with high moisture retention.',
   },
   media: {
-    label: 'Media',
+    label: 'Medium',
     color: '#f59e0b',
     description:
-      'Zona con condiciones moderadas. Apta para ganaderia extensiva y algunos cultivos con manejo adecuado.',
+      'Zone with moderate conditions. Suitable for extensive livestock farming and some crops with proper management.',
   },
   baja: {
-    label: 'Baja',
+    label: 'Low',
     color: '#ef4444',
     description:
-      'Zona con limitaciones climaticas y edaficas. Requiere tecnicas especializadas para uso productivo.',
+      'Zone with climatic and soil limitations. Requires specialized techniques for productive use.',
   },
 }
 
@@ -74,10 +74,10 @@ function Instructions() {
   const containerRef = useRef<HTMLDivElement>(null)
 
   const steps = [
-    { num: 1, text: 'Hace click en el mapa para agregar puntos' },
-    { num: 2, text: 'Agrega al menos 3 puntos para formar un poligono' },
-    { num: 3, text: 'Click en "Completar Poligono"' },
-    { num: 4, text: 'Mira el analisis de la zona' },
+    { num: 1, text: 'Click on the map to add points' },
+    { num: 2, text: 'Add at least 3 points to form a polygon' },
+    { num: 3, text: 'Click "Complete Polygon"' },
+    { num: 4, text: 'See the analysis of the zone' },
   ]
 
   useEffect(() => {
@@ -107,7 +107,7 @@ function Instructions() {
             <MousePointerClick size={20} className="text-emerald-400" />
           </div>
           <p className="text-sm text-slate-300">
-            Dibuja un poligono en el mapa para analizar la zona
+            Draw a polygon on the map to analyze the zone
           </p>
         </div>
       </div>
@@ -116,7 +116,7 @@ function Instructions() {
 
       {/* Steps */}
       <div className="instr-section rounded-xl bg-white/[0.03] p-3">
-        <SectionHeader icon={MousePointerClick} label="Pasos" color="#10b981" />
+        <SectionHeader icon={MousePointerClick} label="Steps" color="#10b981" />
         <div className="mt-2.5 space-y-2.5">
           {steps.map((step) => (
             <div key={step.num} className="flex items-start gap-3">
@@ -177,14 +177,14 @@ function Results({
           color="#10b981"
         />
         <KpiCard
-          label="Hectareas"
+          label="Hectares"
           value={analysis.area_hectares.toFixed(1)}
           unit="ha"
           icon={LandPlot}
           color="#3b82f6"
         />
         <KpiCard
-          label="Perimetro"
+          label="Perimeter"
           value={analysis.perimeter_km.toFixed(2)}
           unit="km"
           icon={Ruler}
@@ -196,7 +196,7 @@ function Results({
 
       {/* Centroid */}
       <div className="result-section rounded-xl bg-white/[0.03] p-3">
-        <SectionHeader icon={MapPin} label="Centroide" color="#06b6d4" />
+        <SectionHeader icon={MapPin} label="Centroid" color="#06b6d4" />
         <p className="mt-2 text-xs text-slate-400 font-mono tabular-nums">
           {analysis.centroid.lat.toFixed(4)}, {analysis.centroid.lng.toFixed(4)}
         </p>
@@ -206,7 +206,7 @@ function Results({
 
       {/* Aptitude */}
       <div className="result-section rounded-xl bg-white/[0.03] p-3">
-        <SectionHeader icon={Leaf} label="Aptitud agropecuaria" color="#10b981" />
+        <SectionHeader icon={Leaf} label="Agricultural aptitude" color="#10b981" />
 
         <div className="mt-2.5">
           <span
@@ -223,7 +223,7 @@ function Results({
 
         <div className="mt-3">
           <p className="text-[10px] font-medium uppercase tracking-wider text-slate-500 mb-1">
-            Tipo de suelo
+            Soil type
           </p>
           <p className="text-sm text-slate-300">{analysis.soilType}</p>
         </div>
@@ -242,7 +242,7 @@ function Results({
           className="group flex items-center gap-2 w-full justify-center rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-2.5 text-xs font-medium text-slate-500 transition-all duration-200 hover:text-red-400 hover:bg-red-500/[0.05] hover:border-red-500/20"
         >
           <Trash2 className="w-3 h-3" />
-          Limpiar dibujo
+          Clear drawing
         </button>
       </div>
     </div>

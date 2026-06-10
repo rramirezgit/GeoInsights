@@ -22,7 +22,7 @@ export default function StoryMapPage() {
           className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/70 backdrop-blur-xl border border-white/10 text-slate-400 hover:text-slate-200 transition-colors text-sm"
         >
           <ChevronLeft className="w-4 h-4" />
-          <span>Volver</span>
+          <span>Back</span>
         </Link>
       </div>
 

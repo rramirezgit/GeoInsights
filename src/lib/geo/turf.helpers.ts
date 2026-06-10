@@ -50,19 +50,19 @@ export function getAptitude(centroid: { lat: number; lng: number }): {
 
   // Pampa humeda: lat -30 to -38, lng -58 to -64
   if (lat >= -38 && lat <= -30 && lng >= -64 && lng <= -58) {
-    return { aptitude: 'alta', soilType: 'Molisol - Pampa Húmeda' }
+    return { aptitude: 'alta', soilType: 'Mollisol - Humid Pampas' }
   }
 
   // Zona media: lat -38 to -45
   if (lat >= -45 && lat < -38) {
-    return { aptitude: 'media', soilType: 'Aridisol - Patagonia Norte' }
+    return { aptitude: 'media', soilType: 'Aridisol - Northern Patagonia' }
   }
 
   // Zona baja: south of -45
   if (lat < -45) {
-    return { aptitude: 'baja', soilType: 'Criosol - Patagonia Sur' }
+    return { aptitude: 'baja', soilType: 'Cryosol - Southern Patagonia' }
   }
 
   // Default for northern regions
-  return { aptitude: 'media', soilType: 'Entisol - Región Norte' }
+  return { aptitude: 'media', soilType: 'Entisol - Northern Region' }
 }

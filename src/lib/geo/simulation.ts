@@ -65,11 +65,11 @@ export function calculateHeading(from: [number, number], to: [number, number]): 
 }
 
 const eventMessages: Record<FleetEvent['type'], string[]> = {
-  arrival: ['Llegó a destino', 'Arribó al punto de entrega'],
-  departure: ['Salió del origen', 'Inició recorrido'],
-  stop: ['Parada programada', 'Detenido por descanso'],
-  alert: ['Desvío de ruta detectado', 'Velocidad excesiva', 'Frenada brusca'],
-  speed: ['Cambio de velocidad registrado'],
+  arrival: ['Arrived at destination', 'Reached the delivery point'],
+  departure: ['Left the origin', 'Started the trip'],
+  stop: ['Scheduled stop', 'Stopped for rest'],
+  alert: ['Route deviation detected', 'Excessive speed', 'Hard braking'],
+  speed: ['Speed change recorded'],
 }
 
 export function randomEvent(truck: Truck): FleetEvent {

@@ -114,7 +114,7 @@ export default function Hub() {
             ref={subtitleRef}
             className="mt-3 text-lg md:text-xl text-slate-400 text-center font-light"
           >
-            Visualizacion geoespacial inteligente
+            Intelligent geospatial visualization
           </p>
 
           <p

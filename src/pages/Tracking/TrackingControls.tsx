@@ -8,10 +8,10 @@ import { THEME } from '@/constants/theme'
 import type { Truck as TruckType, TruckStatus } from '@/types'
 
 const ALL_STATUSES: { key: TruckStatus; label: string }[] = [
-  { key: 'en_ruta', label: 'En Ruta' },
-  { key: 'detenido', label: 'Detenido' },
-  { key: 'alerta', label: 'Alerta' },
-  { key: 'en_destino', label: 'En Destino' },
+  { key: 'en_ruta', label: 'On Route' },
+  { key: 'detenido', label: 'Stopped' },
+  { key: 'alerta', label: 'Alert' },
+  { key: 'en_destino', label: 'At Destination' },
 ]
 
 interface TrackingControlsProps {
@@ -82,7 +82,7 @@ export function TrackingControls({
     <div ref={containerRef} className="space-y-1">
       {/* Simulation */}
       <div className="ctrl-section rounded-xl bg-white/[0.03] p-3">
-        <SectionHeader icon={Gauge} label="Simulacion" color="#06b6d4" />
+        <SectionHeader icon={Gauge} label="Simulation" color="#06b6d4" />
 
         <button
           onClick={onToggleRunning}
@@ -95,18 +95,18 @@ export function TrackingControls({
         >
           {isRunning ? (
             <>
-              <Pause size={13} /> Pausar
+              <Pause size={13} /> Pause
             </>
           ) : (
             <>
-              <Play size={13} /> Reanudar
+              <Play size={13} /> Resume
             </>
           )}
         </button>
 
         <div className="mt-3">
           <RangeSlider
-            label="Velocidad"
+            label="Speed"
             min={0.5}
             max={5}
             step={0.5}
@@ -121,7 +121,7 @@ export function TrackingControls({
 
       {/* Status filters */}
       <div className="ctrl-section rounded-xl bg-white/[0.03] p-3">
-        <SectionHeader icon={Filter} label="Filtros de estado" color="#f59e0b" />
+        <SectionHeader icon={Filter} label="Status filters" color="#f59e0b" />
         <div className="mt-2.5 flex flex-wrap gap-1.5">
           {ALL_STATUSES.map(({ key, label }) => {
             const isActive = filterStatus.includes(key)
@@ -159,7 +159,7 @@ export function TrackingControls({
 
       {/* Search */}
       <div className="ctrl-section rounded-xl bg-white/[0.03] p-3">
-        <SectionHeader icon={Search} label="Buscar camion" color="#3b82f6" />
+        <SectionHeader icon={Search} label="Search truck" color="#3b82f6" />
         <div className="mt-2.5 relative">
           <Search
             size={13}
@@ -169,7 +169,7 @@ export function TrackingControls({
             type="text"
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="ID o nombre..."
+            placeholder="ID or name..."
             className="w-full rounded-lg border border-white/[0.08] bg-slate-800/60 py-2 pl-8 pr-3 text-sm text-slate-200 placeholder-slate-600 outline-none transition-all focus:border-blue-500/40 focus:ring-1 focus:ring-blue-500/20 hover:border-white/[0.15]"
           />
         </div>
@@ -180,7 +180,7 @@ export function TrackingControls({
       {/* Options */}
       <div className="ctrl-section rounded-xl bg-white/[0.03] p-3">
         <div className="flex items-center justify-between">
-          <SectionHeader icon={Route} label="Mostrar rutas" color="#a855f7" />
+          <SectionHeader icon={Route} label="Show routes" color="#a855f7" />
           <Toggle
             label=""
             checked={showRoutes}
@@ -193,7 +193,7 @@ export function TrackingControls({
 
       {/* Fleet summary */}
       <div className="ctrl-section rounded-xl bg-white/[0.03] p-3">
-        <SectionHeader icon={Truck} label="Resumen de flota" color="#10b981" />
+        <SectionHeader icon={Truck} label="Fleet summary" color="#10b981" />
         <div className="mt-2.5 grid grid-cols-2 gap-1.5">
           {ALL_STATUSES.map(({ key, label }) => {
             const color = THEME.colors.status[key]

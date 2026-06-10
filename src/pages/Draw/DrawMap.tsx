@@ -141,7 +141,7 @@ export function DrawMap({ onPolygonComplete, onClear }: DrawMapProps) {
             onClick={handleComplete}
             className="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium shadow-lg shadow-black/30 transition-colors"
           >
-            Completar Poligono ({points.length} puntos)
+            Complete Polygon ({points.length} points)
           </button>
         )}
         {points.length > 0 && (
@@ -149,7 +149,7 @@ export function DrawMap({ onPolygonComplete, onClear }: DrawMapProps) {
             onClick={handleClear}
             className="px-4 py-2 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-300 text-sm font-medium border border-white/10 shadow-lg shadow-black/30 transition-colors"
           >
-            Limpiar
+            Clear
           </button>
         )}
       </div>
@@ -157,8 +157,8 @@ export function DrawMap({ onPolygonComplete, onClear }: DrawMapProps) {
       {/* Point counter / hint */}
       {!isComplete && points.length > 0 && points.length < 3 && (
         <div className="absolute top-4 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-lg bg-slate-900/80 backdrop-blur-sm border border-white/10 text-xs text-slate-400">
-          {3 - points.length} punto{3 - points.length !== 1 ? 's' : ''} mas
-          para completar
+          {3 - points.length} more point{3 - points.length !== 1 ? 's' : ''} to
+          complete
         </div>
       )}
     </div>

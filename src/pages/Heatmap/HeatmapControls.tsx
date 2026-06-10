@@ -26,11 +26,11 @@ const PROVINCES = [
 ] as const
 
 const CROPS: { value: CropType | 'all'; label: string; color: string }[] = [
-  { value: 'all', label: 'Todos', color: '#94a3b8' },
-  { value: 'soja', label: 'Soja', color: '#10b981' },
-  { value: 'maiz', label: 'Maiz', color: '#f59e0b' },
-  { value: 'trigo', label: 'Trigo', color: '#3b82f6' },
-  { value: 'girasol', label: 'Girasol', color: '#f97316' },
+  { value: 'all', label: 'All', color: '#94a3b8' },
+  { value: 'soja', label: 'Soy', color: '#10b981' },
+  { value: 'maiz', label: 'Corn', color: '#f59e0b' },
+  { value: 'trigo', label: 'Wheat', color: '#3b82f6' },
+  { value: 'girasol', label: 'Sunflower', color: '#f97316' },
 ]
 
 export function HeatmapControls() {
@@ -62,7 +62,7 @@ export function HeatmapControls() {
     <div ref={containerRef} className="space-y-1">
       {/* Province */}
       <div className="ctrl-section rounded-xl bg-white/[0.03] p-3">
-        <SectionHeader icon={MapPin} label="Provincia" color="#10b981" />
+        <SectionHeader icon={MapPin} label="Province" color="#10b981" />
         <div className="mt-2.5 relative">
           <select
             value={province}
@@ -71,7 +71,7 @@ export function HeatmapControls() {
           >
             {PROVINCES.map((p) => (
               <option key={p} value={p} className="bg-slate-800">
-                {p === 'all' ? 'Todas las provincias' : p}
+                {p === 'all' ? 'All provinces' : p}
               </option>
             ))}
           </select>
@@ -83,7 +83,7 @@ export function HeatmapControls() {
 
       {/* Crop */}
       <div className="ctrl-section rounded-xl bg-white/[0.03] p-3">
-        <SectionHeader icon={Leaf} label="Cultivo" color="#f59e0b" />
+        <SectionHeader icon={Leaf} label="Crop" color="#f59e0b" />
         <div className="mt-2.5 flex flex-wrap gap-1.5">
           {CROPS.map((c) => {
             const isActive = crop === c.value
@@ -115,7 +115,7 @@ export function HeatmapControls() {
 
       {/* Year */}
       <div className="ctrl-section rounded-xl bg-white/[0.03] p-3">
-        <SectionHeader icon={CalendarDays} label="Ano" color="#3b82f6">
+        <SectionHeader icon={CalendarDays} label="Year" color="#3b82f6">
           <span className="text-xs font-bold text-white tabular-nums">{year}</span>
         </SectionHeader>
         <div className="mt-2.5">
@@ -146,7 +146,7 @@ export function HeatmapControls() {
       {/* Borders toggle */}
       <div className="ctrl-section rounded-xl bg-white/[0.03] p-3">
         <div className="flex items-center justify-between">
-          <SectionHeader icon={Layers} label="Limites provinciales" color="#a855f7" />
+          <SectionHeader icon={Layers} label="Province borders" color="#a855f7" />
           <Toggle
             label=""
             checked={showBorders}
@@ -164,7 +164,7 @@ export function HeatmapControls() {
           className="group flex items-center gap-2 w-full justify-center rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-2.5 text-xs font-medium text-slate-500 transition-all duration-200 hover:text-slate-300 hover:bg-white/[0.05] hover:border-white/[0.12]"
         >
           <RotateCcw className="w-3 h-3 transition-transform duration-300 group-hover:-rotate-180" />
-          Resetear filtros
+          Reset filters
         </button>
       </div>
     </div>

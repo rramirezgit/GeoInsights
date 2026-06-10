@@ -8,9 +8,9 @@ interface ModeToolbarProps {
 }
 
 const MODES: { key: SatelitalMode; label: string; icon: React.ReactNode }[] = [
-  { key: 'compare', label: 'Comparar', icon: <Layers className="w-3.5 h-3.5" /> },
-  { key: 'elevation', label: 'Elevacion', icon: <Mountain className="w-3.5 h-3.5" /> },
-  { key: 'measure', label: 'Medir', icon: <Ruler className="w-3.5 h-3.5" /> },
+  { key: 'compare', label: 'Compare', icon: <Layers className="w-3.5 h-3.5" /> },
+  { key: 'elevation', label: 'Elevation', icon: <Mountain className="w-3.5 h-3.5" /> },
+  { key: 'measure', label: 'Measure', icon: <Ruler className="w-3.5 h-3.5" /> },
 ]
 
 export function ModeToolbar({ mode, onModeChange }: ModeToolbarProps) {

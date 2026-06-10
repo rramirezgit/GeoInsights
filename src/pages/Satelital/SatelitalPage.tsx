@@ -201,7 +201,7 @@ export default function SatelitalPage() {
             exit={{ opacity: 0 }}
             className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[10] px-4 py-2 rounded-xl bg-slate-900/70 backdrop-blur-md border border-white/10 text-xs text-slate-300"
           >
-            Click en el mapa para colocar el punto A
+            Click on the map to place point A
           </motion.div>
         )}
         {mode === 'elevation' && elevationPoints.length === 1 && (
@@ -211,7 +211,7 @@ export default function SatelitalPage() {
             exit={{ opacity: 0 }}
             className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[10] px-4 py-2 rounded-xl bg-slate-900/70 backdrop-blur-md border border-white/10 text-xs text-slate-300"
           >
-            Click en el mapa para colocar el punto B
+            Click on the map to place point B
           </motion.div>
         )}
         {mode === 'measure' && (!measureResult || measureResult.points.length === 0) && (
@@ -221,7 +221,7 @@ export default function SatelitalPage() {
             exit={{ opacity: 0 }}
             className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[10] px-4 py-2 rounded-xl bg-slate-900/70 backdrop-blur-md border border-white/10 text-xs text-slate-300"
           >
-            Click para agregar puntos de medicion
+            Click to add measurement points
           </motion.div>
         )}
       </AnimatePresence>

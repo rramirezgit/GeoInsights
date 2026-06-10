@@ -12,9 +12,9 @@ export function ElevationPanel({ profile, onClose }: ElevationPanelProps) {
   const kpis = [
     { label: 'Min', value: `${profile.minElevation} m`, icon: <ArrowDownRight className="w-3 h-3 text-cyan-400" /> },
     { label: 'Max', value: `${profile.maxElevation} m`, icon: <ArrowUpRight className="w-3 h-3 text-emerald-400" /> },
-    { label: 'Prom', value: `${profile.avgElevation} m`, icon: <Minus className="w-3 h-3 text-slate-400" /> },
-    { label: 'Ganancia', value: `${profile.elevationGain} m`, icon: <Mountain className="w-3 h-3 text-amber-400" /> },
-    { label: 'Distancia', value: `${profile.totalDistance.toFixed(2)} km`, icon: null },
+    { label: 'Avg', value: `${profile.avgElevation} m`, icon: <Minus className="w-3 h-3 text-slate-400" /> },
+    { label: 'Gain', value: `${profile.elevationGain} m`, icon: <Mountain className="w-3 h-3 text-amber-400" /> },
+    { label: 'Distance', value: `${profile.totalDistance.toFixed(2)} km`, icon: null },
   ]
 
   return (
@@ -27,7 +27,7 @@ export function ElevationPanel({ profile, onClose }: ElevationPanelProps) {
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-xs font-semibold text-white/80 uppercase tracking-wider">
-          Perfil de Elevacion
+          Elevation Profile
         </h3>
         <button
           onClick={onClose}
@@ -68,7 +68,7 @@ export function ElevationPanel({ profile, onClose }: ElevationPanelProps) {
                 fontSize: '11px',
                 color: '#e2e8f0',
               }}
-              formatter={(value) => [`${value} m`, 'Elevacion']}
+              formatter={(value) => [`${value} m`, 'Elevation']}
               labelFormatter={(label) => `${label} km`}
             />
             <Area

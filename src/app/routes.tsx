@@ -13,7 +13,7 @@ function LoadingFallback() {
     <div className="min-h-screen flex items-center justify-center bg-slate-950">
       <div className="glass-panel p-8 flex flex-col items-center gap-4">
         <div className="w-10 h-10 border-2 border-emerald-400/30 border-t-emerald-400 rounded-full animate-spin" />
-        <span className="text-slate-400 text-sm">Cargando...</span>
+        <span className="text-slate-400 text-sm">Loading...</span>
       </div>
     </div>
   )

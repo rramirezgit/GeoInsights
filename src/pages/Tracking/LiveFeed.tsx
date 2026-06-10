@@ -40,7 +40,7 @@ const EVENT_CONFIG: Record<
 }
 
 function formatTime(date: Date): string {
-  return date.toLocaleTimeString('es-AR', {
+  return date.toLocaleTimeString('en-GB', {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
@@ -87,7 +87,7 @@ export function LiveFeed({ events }: LiveFeedProps) {
             <Radio className="w-3 h-3 text-red-400" />
           </div>
           <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-            Eventos en vivo
+            Live events
           </span>
         </div>
         <LiveBadge variant="live" />
@@ -101,7 +101,7 @@ export function LiveFeed({ events }: LiveFeedProps) {
         <AnimatePresence initial={false}>
           {events.length === 0 && (
             <p className="py-8 text-center text-xs text-slate-600">
-              Esperando eventos...
+              Waiting for events...
             </p>
           )}
 
@@ -160,7 +160,7 @@ export function LiveFeed({ events }: LiveFeedProps) {
           <div className="h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
         </div>
         <p className="text-center text-[10px] text-slate-600 mt-2">
-          {events.length} evento{events.length !== 1 ? 's' : ''}
+          {events.length} event{events.length !== 1 ? 's' : ''}
         </p>
       </div>
     </div>

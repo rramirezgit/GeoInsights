@@ -10,10 +10,10 @@ import type { Truck, TruckStatus, RouteData } from '@/types'
 const STATUS_COLORS = THEME.colors.status
 
 const STATUS_LABELS: Record<TruckStatus, string> = {
-  en_ruta: 'En Ruta',
-  detenido: 'Detenido',
-  alerta: 'Alerta',
-  en_destino: 'En Destino',
+  en_ruta: 'On Route',
+  detenido: 'Stopped',
+  alerta: 'Alert',
+  en_destino: 'At Destination',
 }
 
 interface TrackingMapProps {
@@ -171,19 +171,19 @@ export function TrackingMap({ trucks, showRoutes }: TrackingMapProps) {
 
             <div className="space-y-1 text-slate-400">
               <p>
-                <span className="text-slate-500">Carga:</span>{' '}
+                <span className="text-slate-500">Cargo:</span>{' '}
                 {popupTruck.cargo}
               </p>
               <p>
-                <span className="text-slate-500">Ruta:</span>{' '}
+                <span className="text-slate-500">Route:</span>{' '}
                 {popupTruck.origin} → {popupTruck.destination}
               </p>
               <p>
-                <span className="text-slate-500">Velocidad:</span>{' '}
+                <span className="text-slate-500">Speed:</span>{' '}
                 {Math.round(popupTruck.speed_kmh)} km/h
               </p>
               <p>
-                <span className="text-slate-500">Rumbo:</span>{' '}
+                <span className="text-slate-500">Heading:</span>{' '}
                 {Math.round(popupTruck.heading)}°
               </p>
             </div>

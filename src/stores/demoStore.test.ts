@@ -60,7 +60,7 @@ describe('demoStore', () => {
         perimeter_km: 13,
         centroid: { lat: -34, lng: -60 },
         aptitude: 'alta',
-        soilType: 'Molisol - Pampa Húmeda',
+        soilType: 'Mollisol - Humid Pampas',
       }
       useDemoStore.getState().setAnalysisResult(result)
       expect(useDemoStore.getState().draw.analysisResult).toBe(result)

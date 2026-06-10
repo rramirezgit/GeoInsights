@@ -25,10 +25,10 @@ const CROP_COLORS: Record<CropType, string> = {
 }
 
 const CROP_LABELS: Record<CropType, string> = {
-  soja: 'Soja',
-  maiz: 'Maiz',
-  trigo: 'Trigo',
-  girasol: 'Girasol',
+  soja: 'Soy',
+  maiz: 'Corn',
+  trigo: 'Wheat',
+  girasol: 'Sunflower',
 }
 
 const TOOLTIP_STYLE = {
@@ -115,20 +115,20 @@ export function HeatmapStats() {
       {/* KPI cards */}
       <div className="stat-section grid gap-1.5">
         <KpiCard
-          label="Produccion total"
+          label="Total production"
           value={Math.round(totalProduction / 1000).toLocaleString()}
           unit="k tn"
           icon={Flame}
           color="#10b981"
         />
         <KpiCard
-          label="Puntos de datos"
+          label="Data points"
           value={filteredData.length.toLocaleString()}
           icon={MapPin}
           color="#3b82f6"
         />
         <KpiCard
-          label="Provincias activas"
+          label="Active provinces"
           value={topProvinces.length.toLocaleString()}
           icon={BarChart3}
           color="#a855f7"
@@ -140,7 +140,7 @@ export function HeatmapStats() {
       {/* Top provinces */}
       {topProvinces.length > 0 && (
         <div className="stat-section rounded-xl bg-white/[0.03] p-3">
-          <ChartHeader label="Top provincias" />
+          <ChartHeader label="Top provinces" />
           <ResponsiveContainer width="100%" height={150}>
             <BarChart
               data={topProvinces}
@@ -167,7 +167,7 @@ export function HeatmapStats() {
                 cursor={{ fill: 'rgba(255,255,255,0.03)' }}
                 formatter={(value: string | number | undefined) => [
                   `${Number(value ?? 0).toLocaleString()} tn`,
-                  'Produccion',
+                  'Production',
                 ]}
               />
               <Bar dataKey="production" radius={[0, 6, 6, 0]} maxBarSize={14}>
@@ -188,7 +188,7 @@ export function HeatmapStats() {
       {/* Crop distribution */}
       {cropDistribution.length > 1 && (
         <div className="stat-section rounded-xl bg-white/[0.03] p-3">
-          <ChartHeader label="Distribucion por cultivo" />
+          <ChartHeader label="Distribution by crop" />
           <ResponsiveContainer width="100%" height={160}>
             <PieChart>
               <Pie
@@ -210,7 +210,7 @@ export function HeatmapStats() {
                 contentStyle={TOOLTIP_STYLE}
                 formatter={(value: string | number | undefined) => [
                   `${Number(value ?? 0).toLocaleString()} tn`,
-                  'Produccion',
+                  'Production',
                 ]}
               />
             </PieChart>

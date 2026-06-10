@@ -44,8 +44,8 @@ export default function TrackingPage() {
 
   return (
     <DemoLayout
-      title="Tracking de Flota"
-      description="Seguimiento en tiempo real de vehiculos con simulacion de rutas argentinas"
+      title="Fleet Tracking"
+      description="Real-time vehicle tracking with simulated Argentine routes"
       leftPanel={
         <TrackingControls
           trucks={trucks}
@@ -59,9 +59,9 @@ export default function TrackingPage() {
           onShowRoutesChange={setShowRoutes}
         />
       }
-      leftPanelTitle="Controles"
+      leftPanelTitle="Controls"
       rightPanel={<LiveFeed events={events} />}
-      rightPanelTitle="Feed en Vivo"
+      rightPanelTitle="Live Feed"
     >
       <TrackingMap trucks={displayTrucks} showRoutes={showRoutes} />
     </DemoLayout>

@@ -271,7 +271,7 @@ export const SwipeMap = forwardRef<SwipeMapHandle, SwipeMapProps>(
           transition={{ delay: 0.5, duration: 0.4 }}
           className="absolute top-4 left-4 z-[4] px-3 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-md border border-white/10 text-xs font-medium text-white/80"
         >
-          {mode === 'compare' ? 'Satelital' : mode === 'elevation' ? 'Perfil de Elevacion' : 'Medicion'}
+          {mode === 'compare' ? 'Satellite' : mode === 'elevation' ? 'Elevation Profile' : 'Measurement'}
         </motion.div>
 
         {mode === 'compare' && (

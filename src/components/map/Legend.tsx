@@ -12,7 +12,7 @@ interface LegendProps {
   title?: string
 }
 
-export function Legend({ items, title = 'Leyenda' }: LegendProps) {
+export function Legend({ items, title = 'Legend' }: LegendProps) {
   const [collapsed, setCollapsed] = useState(false)
 
   if (items.length === 0) return null

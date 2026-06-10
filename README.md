@@ -19,6 +19,8 @@
   <strong><a href="https://geoinsights-ten.vercel.app">Live Demo</a></strong>
 </p>
 
+![GeoInsights demo](docs/demo.gif)
+
 <p align="center">
   <a href="#demos">Demos</a> &middot;
   <a href="#tech-stack">Tech Stack</a> &middot;

@@ -184,7 +184,7 @@ npm test
 - **Zod validators** — GeoJSON and domain schema edge cases
 - **Elevation profiling** — sampling, gain accumulation, defensive terrain queries
 
-Mapbox GL and deck.gl are mocked at the module boundary; the WebGL canvas itself is exercised by Playwright smoke tests in CI.
+Mapbox GL and deck.gl are mocked at the module boundary; the WebGL canvas is intentionally outside unit-test scope.
 
 ---
 

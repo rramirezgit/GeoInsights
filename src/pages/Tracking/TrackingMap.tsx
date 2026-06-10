@@ -105,7 +105,7 @@ export function TrackingMap({ trucks, showRoutes }: TrackingMapProps) {
             longitude={truck.lng}
             latitude={truck.lat}
             anchor="center"
-            onClick={(e: any) => {
+            onClick={(e: { originalEvent: MouseEvent }) => {
               e.originalEvent.stopPropagation()
               handleTruckClick(truck)
             }}

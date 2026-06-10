@@ -16,6 +16,10 @@
 </p>
 
 <p align="center">
+  <strong><a href="https://geoinsights-ten.vercel.app">Live Demo</a></strong>
+</p>
+
+<p align="center">
   <a href="#demos">Demos</a> &middot;
   <a href="#tech-stack">Tech Stack</a> &middot;
   <a href="#getting-started">Getting Started</a> &middot;

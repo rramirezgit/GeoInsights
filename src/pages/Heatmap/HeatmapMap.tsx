@@ -190,6 +190,7 @@ export function HeatmapMap() {
         <Map
           mapboxAccessToken={MAPBOX_TOKEN}
           mapStyle={MAP_STYLES.dark}
+          projection="mercator"
           attributionControl={false}
         >
           <NavigationControl position="top-right" showCompass={false} />

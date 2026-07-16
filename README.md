@@ -12,7 +12,7 @@
 
 <p align="center">
   <strong>Intelligent geospatial visualization platform</strong><br/>
-  <em>6 interactive demos combining maps, real-time data and client-side spatial analysis over Argentina</em>
+  <em>7 interactive demos combining maps, real-time data and client-side spatial analysis over Argentina</em>
 </p>
 
 <p align="center">
@@ -58,16 +58,23 @@ Crop production by region using a **deck.gl ScatterplotLayer** with color gradie
 ### 2. Fleet Tracking
 Real-time simulation of **20 trucks** moving along Argentine national routes (Routes 9, 7, 40, 3, 14, 11). Animated status-pulse markers, live event feed, simulation speed controls and route rendering.
 
-### 3. Satellite Comparator
+### 3. Oil & Gas Wells
+Live monitoring of **280 wells across the five Argentine oil basins** (Neuquina · Vaca Muerta, Golfo San Jorge, Cuyana, Austral, Noroeste). A deck.gl ScatterplotLayer colors each well by status and scales it by output, while a simulated SCADA feed refreshes production readings every 2.5 seconds. Filter by basin (with camera fly-to), status, resource and minimum production; side panel with KPIs, production-by-basin chart and top producers.
+
+![Oil & Gas Wells demo](docs/wells.png)
+
+> Simulated dataset: basins and field names are real, well positions and production figures are not.
+
+### 4. Satellite Comparator
 Two synchronized maps with a **comparison slider**: satellite vs terrain. Drag to compare. Preset zones: Paraná Delta, Perito Moreno Glacier, Buenos Aires, Iguazú Falls, Mendoza. Includes elevation profiling and distance measurement modes.
 
-### 4. Draw & Analyze
+### 5. Draw & Analyze
 Draw polygons directly on the map by clicking. On completion, **Turf.js** automatically computes: area (km² and hectares), perimeter, centroid, estimated agricultural aptitude and soil type by geographic zone.
 
-### 5. StoryMap Argentina
+### 6. StoryMap Argentina
 Scroll-driven narrative with **cinematic fly-overs** across 6 Argentine locations: Buenos Aires, the Humid Pampas, Mendoza, Patagonia and the Northwest. The map glides between locations as you scroll through the story.
 
-### 6. Hub (Landing)
+### 7. Hub (Landing)
 Main page with a rotating 3D map background, emerald-cyan gradient typography, glassmorphism card grid and staggered Framer Motion animations.
 
 ---

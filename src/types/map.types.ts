@@ -1,6 +1,6 @@
 import type { MapStyle, ViewState } from './geo.types'
 
-export type DemoId = 'hub' | 'heatmap' | 'tracking' | 'satelital' | 'draw' | 'storymap'
+export type DemoId = 'hub' | 'heatmap' | 'tracking' | 'wells' | 'satelital' | 'draw' | 'storymap'
 
 export interface DemoConfig {
   id: DemoId

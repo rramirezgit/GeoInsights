@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import {
   Flame,
   Truck,
+  Drill,
   Satellite,
   PenTool,
   BookOpen,
@@ -15,6 +16,7 @@ import { TagPill } from '@/components/ui/TagPill'
 const ICON_MAP: Record<string, LucideIcon> = {
   Flame,
   Truck,
+  Drill,
   Satellite,
   PenTool,
   BookOpen,

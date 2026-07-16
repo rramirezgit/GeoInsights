@@ -20,6 +20,15 @@ export const DEMOS: DemoConfig[] = [
     tags: ['Real-time', 'Animation', 'WebSocket-ready'],
   },
   {
+    id: 'wells',
+    title: 'Oil & Gas Wells',
+    description: 'Live monitoring of 280 wells across the five Argentine oil basins',
+    icon: 'Drill',
+    path: '/wells',
+    color: '#eab308',
+    tags: ['deck.gl', 'Live data', 'Energy'],
+  },
+  {
     id: 'satelital',
     title: 'Satellite Comparator',
     description: 'Compare satellite vs terrain views with a synced slider',

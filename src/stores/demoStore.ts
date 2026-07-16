@@ -2,6 +2,7 @@ import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'
 import type { CropType } from '@/types/agro.types'
 import type { TruckStatus } from '@/types/fleet.types'
+import type { BasinId, WellResource, WellStatus } from '@/types/wells.types'
 import type { MapStyle, AnalysisResult, SatelitalMode, ElevationPoint, ElevationProfile, MeasurementResult } from '@/types/geo.types'
 
 interface HeatmapFilters {
@@ -21,6 +22,14 @@ interface DrawState {
   analysisResult: AnalysisResult | null
 }
 
+interface WellsFilters {
+  basin: BasinId | 'all'
+  statusFilter: WellStatus[]
+  resource: WellResource | 'all'
+  minProduction: number
+  selectedWell: string | null
+}
+
 interface SatelitalState {
   leftStyle: MapStyle
   rightStyle: MapStyle
@@ -36,9 +45,11 @@ interface DemoStore {
   tracking: TrackingFilters
   draw: DrawState
   satelital: SatelitalState
+  wells: WellsFilters
 
   setHeatmapFilter: <K extends keyof HeatmapFilters>(key: K, value: HeatmapFilters[K]) => void
   setTrackingFilter: <K extends keyof TrackingFilters>(key: K, value: TrackingFilters[K]) => void
+  setWellsFilter: <K extends keyof WellsFilters>(key: K, value: WellsFilters[K]) => void
   setAnalysisResult: (result: AnalysisResult | null) => void
   setSatelitalState: <K extends keyof SatelitalState>(key: K, value: SatelitalState[K]) => void
   setSatelitalMode: (mode: SatelitalMode) => void
@@ -52,6 +63,7 @@ interface DemoStore {
   resetTracking: () => void
   resetDraw: () => void
   resetSatelital: () => void
+  resetWells: () => void
 }
 
 const initialHeatmap: HeatmapFilters = {
@@ -71,6 +83,14 @@ const initialDraw: DrawState = {
   analysisResult: null,
 }
 
+const initialWells: WellsFilters = {
+  basin: 'all',
+  statusFilter: ['producing', 'drilling', 'maintenance', 'shut_in'],
+  resource: 'all',
+  minProduction: 0,
+  selectedWell: null,
+}
+
 const initialSatelital: SatelitalState = {
   leftStyle: 'satellite',
   rightStyle: 'terrain',
@@ -88,11 +108,14 @@ export const useDemoStore = create<DemoStore>()(
       tracking: initialTracking,
       draw: initialDraw,
       satelital: initialSatelital,
+      wells: initialWells,
 
       setHeatmapFilter: (key, value) =>
         set((state) => ({ heatmap: { ...state.heatmap, [key]: value } })),
       setTrackingFilter: (key, value) =>
         set((state) => ({ tracking: { ...state.tracking, [key]: value } })),
+      setWellsFilter: (key, value) =>
+        set((state) => ({ wells: { ...state.wells, [key]: value } })),
       setAnalysisResult: (result) =>
         set({ draw: { analysisResult: result } }),
       setSatelitalState: (key, value) =>
@@ -129,6 +152,7 @@ export const useDemoStore = create<DemoStore>()(
       resetTracking: () => set({ tracking: initialTracking }),
       resetDraw: () => set({ draw: initialDraw }),
       resetSatelital: () => set({ satelital: initialSatelital }),
+      resetWells: () => set({ wells: initialWells }),
     }),
     { name: 'demo-store' }
   )

@@ -11,6 +11,7 @@ describe('demoStore', () => {
     state.resetTracking()
     state.resetDraw()
     state.resetSatelital()
+    state.resetWells()
   })
 
   describe('heatmap filters', () => {
@@ -49,6 +50,36 @@ describe('demoStore', () => {
     it('narrows the status filter', () => {
       useDemoStore.getState().setTrackingFilter('filterStatus', ['alerta'])
       expect(useDemoStore.getState().tracking.filterStatus).toEqual(['alerta'])
+    })
+  })
+
+  describe('wells filters', () => {
+    it('starts with every basin, status and resource enabled', () => {
+      expect(useDemoStore.getState().wells).toEqual({
+        basin: 'all',
+        statusFilter: ['producing', 'drilling', 'maintenance', 'shut_in'],
+        resource: 'all',
+        minProduction: 0,
+        selectedWell: null,
+      })
+    })
+
+    it('updates a single filter preserving the rest', () => {
+      useDemoStore.getState().setWellsFilter('basin', 'neuquina')
+      useDemoStore.getState().setWellsFilter('minProduction', 500)
+      const { wells } = useDemoStore.getState()
+      expect(wells.basin).toBe('neuquina')
+      expect(wells.minProduction).toBe(500)
+      expect(wells.resource).toBe('all')
+    })
+
+    it('resets to the initial filters', () => {
+      useDemoStore.getState().setWellsFilter('selectedWell', 'NQN-0042')
+      useDemoStore.getState().setWellsFilter('statusFilter', ['producing'])
+      useDemoStore.getState().resetWells()
+      const { wells } = useDemoStore.getState()
+      expect(wells.selectedWell).toBeNull()
+      expect(wells.statusFilter).toHaveLength(4)
     })
   })
 

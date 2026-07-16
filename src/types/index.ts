@@ -32,3 +32,12 @@ export type {
   LayerConfig,
   MapConfig,
 } from './map.types'
+
+export type {
+  WellStatus,
+  WellResource,
+  BasinId,
+  Well,
+  WellFilters,
+  BasinConfig,
+} from './wells.types'

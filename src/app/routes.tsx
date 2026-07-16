@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 const Hub = lazy(() => import('@/pages/Hub/Hub'))
 const HeatmapPage = lazy(() => import('@/pages/Heatmap/HeatmapPage'))
 const TrackingPage = lazy(() => import('@/pages/Tracking/TrackingPage'))
+const WellsPage = lazy(() => import('@/pages/Wells/WellsPage'))
 const SatelitalPage = lazy(() => import('@/pages/Satelital/SatelitalPage'))
 const DrawPage = lazy(() => import('@/pages/Draw/DrawPage'))
 const StoryMapPage = lazy(() => import('@/pages/StoryMap/StoryMapPage'))
@@ -26,6 +27,7 @@ export function AppRoutes() {
         <Route path="/" element={<Hub />} />
         <Route path="/heatmap" element={<HeatmapPage />} />
         <Route path="/tracking" element={<TrackingPage />} />
+        <Route path="/wells" element={<WellsPage />} />
         <Route path="/satelital" element={<SatelitalPage />} />
         <Route path="/draw" element={<DrawPage />} />
         <Route path="/storymap" element={<StoryMapPage />} />
